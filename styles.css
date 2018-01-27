@@ -61,7 +61,7 @@
 #logo-weknow {
 	font-size: 40px;
 	color: #0C5EA4;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserratbold', sans-serif;
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 5px;
@@ -70,7 +70,7 @@
 
 #navbar-tab {
 	display: inline-block;
-	font-family: "Noto Sans", sans-serif;
+	font-family: "noto_sansregular", sans-serif;
 	font-size: 15px;
 	color: #3A403F;
 	vertical-align: top;
@@ -121,7 +121,7 @@
 }
 
 .landing-title h2 {
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'noto_sansregular', sans-serif;
 	color: #0C5EA4;
 	width: 65%;
 	text-align: center;
@@ -157,7 +157,7 @@ OPTION ROW
 }
 
 .option h5 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserratbold', sans-serif;
 	color: #0C5EA4;
 	text-align: center;
 	font-size: 30px;
@@ -201,8 +201,9 @@ html {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    font-family: "Noto Sans", sans-serif;
+    font-family: "noto_sansregular", sans-serif;
     margin-left: 95px;
+    margin-top: -15px;
 }
 
 /* Dropdown button on hover & focus */
@@ -260,7 +261,7 @@ GENERAL INFO SECTION
 }
 
 .info-column p {
-	font-family: "Noto Sans", sans-serif;
+	font-family: "noto_sansregular", sans-serif;
 }
 
 .info-column img {
@@ -278,7 +279,7 @@ GENERAL INFO SECTION
 }
 
 .general-info {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserratbold', sans-serif;
 	color: white;
 }
 
@@ -328,7 +329,7 @@ FOOTER SECTION
 	width: 53%;
 	text-align: center;
 	color: black;
-	font-family: "Noto Sans", sans-serif;
+	font-family: "noto_sansregular", sans-serif;
 	margin-left: 25%;
 }
 
