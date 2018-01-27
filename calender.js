@@ -185,7 +185,7 @@ function short_months(tags)
                         'May',
                         'Jun',
                         'Jul',
-                        'Aug',
+                        'Aug',	
                         'Sep',
                         'Oct',
                         'Nov',

@@ -78,10 +78,14 @@
 	margin-left: 4%;
 }
 
+#navbar-tab:hover {
+	color: #0C5EA4;
+}
+
 .autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
-.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-suggestion { padding: 10px 5px; font-family: "noto_sansregular", sans-serif; font-size: 16px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #f0f0f0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+.autocomplete-suggestions strong { font-weight: normal;  font-family: "noto_sansregular", sans-serif; color: #3399ff; }
 
 
 #searchfield { 
@@ -95,7 +99,7 @@
  
 #searchfield form {
   display: inline-block;
-  background: #eeefed;
+  font-family: "noto_sansregular", sans-serif;
   padding: 0;
   margin: 0;
   padding: 5px;
@@ -109,15 +113,20 @@
   background-color: #fff;
   border: 1px solid #c8c8c8;
   border-radius: 3px;
-  color: #aeaeae;
+  color: #3A403F;
   font-weight:normal;
-  font-size: 1.5em;
+  font-size: 16px;
+  font-family: "noto_sansregular", sans-serif;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 #searchfield form .biginput:focus {
   color: #858585;
+}
+
+.biginput::placeholder {
+	font-size: 14px;
 }
 
 .landing-title h2 {
@@ -150,6 +159,10 @@ OPTION ROW
 	max-height: 300px;
 	vertical-align: top;
 	border: 5px solid #509ECB;
+}
+
+.option:hover {
+	background-color: #B3C4D3;
 }
 
 .option:nth-child(1n) {
@@ -240,7 +253,7 @@ html {
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {display:block; z-index: 1;}
 
 /*--------------------------------------
 GENERAL INFO SECTION
@@ -264,8 +277,13 @@ GENERAL INFO SECTION
 	font-family: "noto_sansregular", sans-serif;
 }
 
-.info-column img {
+#people {
 	width: 110%;
+}
+
+#speechbubbles {
+	width: 90%;
+	padding: 20px 0px;
 }
 
 .info-column h3 {
@@ -333,6 +351,11 @@ FOOTER SECTION
 	margin-left: 25%;
 }
 
+#footer-links {
+	color: white;
+}
+
+
 #link {
 	width: 3%;
 	display: inline-block;
@@ -342,6 +365,24 @@ FOOTER SECTION
 .socialmedia-links {
 	text-align: center;
 }
+
+#highlight {
+	font-size: 20px;
+	color: #154A7A;
+	font-weight: bold;
+}
+
+#weknow-footer {
+	color: #154A7A;
+	font-weight: bold;
+}
+
+.footer h3 {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+}
+
 
 /*--------------------------------------
 REPORT A CASE PAGE
@@ -441,5 +482,21 @@ REPORT A CASE PAGE
 	height: 150px;
 }
 
+a {
+	text-decoration: none;
+}
+
+/*--------------------------------------
+INDIVIDUAL SCHOOL PAGE
+--------------------------------------*/
+.infographic-body {
+	position: absolute;
+	background-color: #63A9D1;
+	height: 100%;
+	width: 100%;
+	top: 0
+	left: 0;`
+	z-index: 1;
+}
 
 
