@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>We Know</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="shortcut icon" type="image/gif" href="images/logo.gif"/>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  	<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+  	<script type="text/javascript" src="js/currency-autocomplete.js"></script>
+</head>
+<body>
+	<div class="fullscreen-bg">
+		<div class="overlay"></div>
+		<video loop muted autoplay poster="bg-video.mp4" class="fullscreen-bg__video">
+        	<source src="bg-video.mp4" type="video/mp4">
+    	</video>
+	</div>
+
+	<div class="navbar">
+		<img src="images/logo.gif" id="logo">
+		<h1 id="logo-weknow">We Know.</h1>
+
+		<h3 id="navbar-tab">REPORT A CASE</h3>
+		<h3 id="navbar-tab">MORE ABOUT US</h3>
+
+		<div id="searchfield">
+		<form><input type="text" name="currency" class="biginput" id="autocomplete"></form>
+	  </div><!-- @end #searchfield -->
+
+	  <div class="landing-title">
+	  	<h2>Arm yourself with the truth to start leading the way in sexual assault prevention</h2>
+	  </div>
+	</div>
+
+	<div class="three-options">
+		<div class="option">
+			<h5>Know Your School</h5>
+			<img src="images/school.png" id="option-icon1">
+
+			<div class="dropdown">
+  				<button onclick="myFunction()" class="dropbtn">Select Your School</button>
+			  	<div id="myDropdown" class="dropdown-content">
+				    <a href="#">Link 1</a>
+				    <a href="#">Link 2</a>
+				    <a href="#">Link 3</a>
+			  	</div>
+			</div>		
+		</div>
+		<div class="option">
+			<h5>Report What <br> You Know</h5>
+			<img src="images/person.png" id="option-icon2">
+		</div>
+		<div class="option">
+			<h5>About We Know</h5>
+			<img src="images/stats.png" id="option-icon3"> 
+		</div>
+	</div>
+ 	
+ 	</html>
+ 	<script>
+ 	function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+	</script>	
+
+<html>
+<div class="general-info">
+	<h5>About Sexual Assault</h5>
+	<hr>
+
+	<div class=row1>
+		<div class="info-column">
+			<h3>One in five college women experience sexual assault.</h3>
+			<p>Sexual violence affects hundreds of thousands of Americans each year. While we’re making progress — the number of assaults has fallen by more than half since 1993 — even today, only 6 out of every 1,000 rapists will end up in prison.</p>
+		</div>
+		<div class="info-column">
+			<img src="images/oneinfive.png">
+		</div>
+	</div>
+
+	<div class="row2">
+		<div class="info-column">
+			<img src="images/map.png">
+		</div>
+		<div class="info-column">
+			<h3>Fewer than 5% of survivors report the crime.</h3>
+			<p>Sexual violence affects hundreds of thousands of Americans each year. While we’re making progress — the number of assaults has fallen by more than half since 1993 — even today, only 6 out of every 1,000 rapists will end up in prison.</p>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer-logo">
+			<img src="images/logo.gif" id="logo">
+			<h1 id="logo-weknow">We Know.</h1>
+		</div>
+
+		<p>© 2018 American Society for the Prevention of Cruelty to Animals. All rights reserved.
+The ASPCA is a 501(c)(3) non-for-profit organization. Privacy Policy  Legal Info</p>
+
+		<div class="socialmedia-links">
+			<img src="images/png/facebook.png" id="link">
+			<img src="images/png/twitter.png" id="link">
+			<img src="images/png/instagram.png" id="link">
+			<img src="images/png/google-plus.png" id="link">
+			<img src="images/png/tumblr.png" id="link">
+		</div>
+	</div>
+
+
+</div>
+
+	
+
+
+
+<!-- MARGARET'S SECTION 
+
+
+
+
+-->
+
+
+<!-- STELLA'S SECTION
+
+
+
+
+-->
