@@ -10,13 +10,13 @@
     if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
     }      
-    $date=$_POST['bear-dates'];
-    $month=$_POST['bear-months'];
-    $year=$_POST['bear-years'];
-    $type = $_POST['assault-types'];
-    $known = $_POST['yes-no']
+    $date=db_quote($_POST['bear-dates']);
+    $month=db_quote($_POST['bear-months']);
+    $year=db_quote($_POST['bear-years']);
+    $type = db_quote($_POST['assault-types']);
+    $known = db_quote($_POST['yes-no']);
 
-    $sql = "INSERT INTO uvaData VALUES ('$date','$month','$year','$type','$known')";
+    $result = db_query("INSERT INTO uvaData VALUES (" . $date . "," . $month . "," . $year . "," . $type . "," . $known . ")");
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
