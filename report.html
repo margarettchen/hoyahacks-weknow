@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>We Know - Report a Case</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="shortcut icon" type="image/gif" href="images/logo.gif"/>
+	<link rel="shortcut icon" type="image/gif" href="images/logo.gif" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.timepicker.js"></script>
 </head>
+
 <body>
 	<div class="navbar" id="report-navbar">
 		<img src="images/logo.gif" id="logo">
@@ -18,258 +20,249 @@
 		<h3 id="navbar-tab">MORE ABOUT US</h3>
 
 		<div id="searchfield">
-		<form><input type="text" name="currency" class="biginput" id="autocomplete"></form>
-	  </div><!-- @end #searchfield -->
+			<form>
+				<input type="text" name="currency" class="biginput" id="autocomplete">
+			</form>
+		</div>
+		<!-- @end #searchfield -->
 	</div>
 
-	 <div class="background-image">
-	 	<div class="overlay1"></div>
-	 </div>
+	<div class="background-image">
+		<div class="overlay1"></div>
+	</div>
+	<form method="POST" action="report.php" id="myForm">
+		<div class="entry-form">
+			<div class="entryrow entryrow-1">
+				<h3>University</h3>
 
-	 <div class="entry-form">
-	 	<div class="entryrow entryrow-1">
-	 		<h3>University</h3>
+				<div class="container">
+					<select class="school-name"></select>
+				</div>
 
-	 		<div class="container">
-	 			<select class="school-name"></select>
-	 		</div>
+				<script>
+					function func_schools(tags) {
 
-	 		<script>
-	 			function func_schools(tags) {
+						var listed_schools = [
+							'University of Virginia',
+							'Virginia Tech',
+							'Georgetown University',
+							'University of Pennsylvania',
+							'Harvard College',
+							'Yale College',
+							'Cornell University',
+							'Brown University',
+						];
 
-	 				var listed_schools = [
-                        'University of Virginia',
-                        'Virginia Tech',
-                        'Georgetown University',
-                        'University of Pennsylvania',
-                        'Harvard College',
-                        'Yale College',
-                        'Cornell University',
-                        'Brown University',
-					];
-
-	 				if(tags == '')
-					//If the short_months('') paramenter is empty, add no tags
-					{
-						var i;
-						for (i = 0, l = listed_schools.length, schools = ""; i < l; i++)
-							{
+						if (tags == '')
+						//If the short_months('') paramenter is empty, add no tags
+						{
+							var i;
+							for (i = 0, l = listed_schools.length, schools = ""; i < l; i++) {
 								schools += listed_schools[i];
 							}
 						}
-					else
-					//If the years('option') has paramenter, add the tags to it
-					{
-						for (i = 0, l = listed_schools.length, schools = ""; i < l; i++)
+						else
+						//If the years('option') has paramenter, add the tags to it
 						{
-							schools += "<" + tags +">" + listed_schools[i] + "</" + tags +">";
-						}	
+							for (i = 0, l = listed_schools.length, schools = ""; i < l; i++) {
+								schools += "<" + tags + ">" + listed_schools[i] + "</" + tags + ">";
+							}
+						}
+
+						var multiple_list = document.getElementsByClassName("school-name");
+						for (i = 0; i < multiple_list.length; i++) {
+							multiple_list[i].innerHTML = schools;
+						}
+
 					}
 
-					var multiple_list = document.getElementsByClassName("school-name");
-				    for (i = 0; i < multiple_list.length; i++)
-					{
-				    	multiple_list[i].innerHTML = schools;
-				    }	
+					func_schools('option');
+				</script>
+			</div>
 
-	 		}
+			<div class="entryrow entryrow-2">
+				<h3>Date of Incident</h3>
 
-	 		func_schools('option');
-	 		</script>
-	 	</div>
+				<div class="container">
+					<select class="bear-dates"></select>
+					<select class="bear-months"></select>
+					<select class="bear-years"></select>
+				</div>
 
-	 	<div class="entryrow entryrow-2">
-	 		<h3>Date of Incident</h3>
+				<script src="calender.js" type="text/javascript"></script>
+				<script type="text/javascript">
+					dates('option');
+					months('option');
+					//You can change the startYear(1990) and endYear(2017)
+					years('option', 2000, 2018);
+				</script>
+			</div>
 
-	 		<div class="container">
-	    		<select class="bear-dates"></select>
-	    		<select class="bear-months"></select>
-	    		<select class="bear-years"></select>
-	    	</div>
+			<div class="entryrow entryrow-3">
+				<h3>Time of Incident</h3>
 
-	    	<script src="calender.js" type="text/javascript"></script>
-			<script type="text/javascript">
-			dates('option');
-			months('option');
-			//You can change the startYear(1990) and endYear(2017)
-			years('option', 2000, 2018);
-			</script>
-	 	</div>
+				<div class="container" id="basicExample">
+					<select class="time-entry"></select>
+				</div>
+				<script>
+					function time(tags) {
 
-	 	<div class="entryrow entryrow-3">
-	 		<h3>Time of Incident</h3>
+						var list_time = [
+							'12AM',
+							'1AM',
+							'2AM',
+							'3AM',
+							'4AM',
+							'5AM',
+							'6AM',
+							'7AM',
+							'8AM',
+							'9AM',
+							'10AM',
+							'11AM',
+							'12PM',
+							'1PM',
+							'2PM',
+							'3PM',
+							'4PM',
+							'5PM',
+							'6PM',
+							'7PM',
+							'8PM',
+							'9PM',
+							'10PM',
+							'11PM',
 
-	 		<div class="container" id="basicExample">
-	    		<select class="time-entry"></select>
-	    	</div>
-	    	<script>
-	 			function time(tags) {
+						];
 
-	 				var list_time = [
-                        '12AM',
-                        '1AM',
-                        '2AM',
-                        '3AM',
-                        '4AM',
-                        '5AM',
-                        '6AM',
-                        '7AM',
-                        '8AM',
-                        '9AM',
-                        '10AM',
-                        '11AM',
-                        '12PM',
-                        '1PM',
-                        '2PM',
-                        '3PM',
-                        '4PM',
-                        '5PM',
-                        '6PM',
-                        '7PM',
-                        '8PM',
-                        '9PM',
-                        '10PM',
-                        '11PM',
-           
-					];
-
-	 				if(tags == '')
-					//If the short_months('') paramenter is empty, add no tags
-					{
-						var i;
-						for (i = 0, l = list_time.length, time_entered = ""; i < l; i++)
-							{
+						if (tags == '')
+						//If the short_months('') paramenter is empty, add no tags
+						{
+							var i;
+							for (i = 0, l = list_time.length, time_entered = ""; i < l; i++) {
 								time_entered += list_time[i];
 							}
 						}
-					else
-					//If the years('option') has paramenter, add the tags to it
-					{
-						for (i = 0, l = list_time.length, time_entered = ""; i < l; i++)
+						else
+						//If the years('option') has paramenter, add the tags to it
 						{
-							time_entered += "<" + tags +">" + list_time[i] + "</" + tags +">";
-						}	
+							for (i = 0, l = list_time.length, time_entered = ""; i < l; i++) {
+								time_entered += "<" + tags + ">" + list_time[i] + "</" + tags + ">";
+							}
+						}
+
+						var multiple_list = document.getElementsByClassName("time-entry");
+						for (i = 0; i < multiple_list.length; i++) {
+							multiple_list[i].innerHTML = time_entered;
+						}
+
 					}
 
-					var multiple_list = document.getElementsByClassName("time-entry");
-				    for (i = 0; i < multiple_list.length; i++)
-					{
-				    	multiple_list[i].innerHTML = time_entered;
-				    }	
+					time('option');
+				</script>
+			</div>
 
-	 		}
+			<div class="entryrow entryrow-4">
+				<h3>Type of Sexual Assault</h3>
 
-	 		time('option');
-	 		</script>
-		</div>
+				<div class="container">
+					<select class="assault-types"></select>
+				</div>
 
-		<div class="entryrow entryrow-4">
-			<h3>Type of Sexual Assault</h3>
+				<script>
+					function type_assault(tags) {
 
-			<div class="container">
-	    		<select class="assault-types"></select>
-	    	</div>
+						var list_assault = [
+							'Rape',
+							'Sexual coercion',
+							'Drug-facilitated assault',
+							'Sexual harassment',
+							'Stalking',
+							'Intimate partner violence',
+							'Multi-perpetrator sexual assault',
 
-			<script>
-	 			function type_assault(tags) {
+						];
 
-	 				var list_assault = [
-                        'Rape',
-                        'Sexual coercion',
-                        'Drug-facilitated assault',
-                        'Sexual harassment',
-                        'Stalking',
-                        'Intimate partner violence',
-                        'Multi-perpetrator sexual assault',
-           
-					];
-
-	 				if(tags == '')
-					//If the short_months('') paramenter is empty, add no tags
-					{
-						var i;
-						for (i = 0, l = list_assault.length, assaults = ""; i < l; i++)
-							{
+						if (tags == '')
+						//If the short_months('') paramenter is empty, add no tags
+						{
+							var i;
+							for (i = 0, l = list_assault.length, assaults = ""; i < l; i++) {
 								assaults += list_assault[i];
 							}
 						}
-					else
-					//If the years('option') has paramenter, add the tags to it
-					{
-						for (i = 0, l = list_assault.length, assaults = ""; i < l; i++)
+						else
+						//If the years('option') has paramenter, add the tags to it
 						{
-							assaults += "<" + tags +">" + list_assault[i] + "</" + tags +">";
-						}	
+							for (i = 0, l = list_assault.length, assaults = ""; i < l; i++) {
+								assaults += "<" + tags + ">" + list_assault[i] + "</" + tags + ">";
+							}
+						}
+
+						var multiple_list = document.getElementsByClassName("assault-types");
+						for (i = 0; i < multiple_list.length; i++) {
+							multiple_list[i].innerHTML = assaults;
+						}
+
 					}
 
-					var multiple_list = document.getElementsByClassName("assault-types");
-				    for (i = 0; i < multiple_list.length; i++)
-					{
-				    	multiple_list[i].innerHTML = assaults;
-				    }	
+					type_assault('option');
+				</script>
+			</div>
 
-	 		}
+			<div class="entryrow entryrow-5">
+				<h3>Did You Report Your Case to School Authorities? If not, why?</h3>
 
-	 		type_assault('option');
-	 		</script>
-		</div>
+				<div class="container">
+					<select class="yes-no"></select>
+				</div>
 
-		<div class="entryrow entryrow-5">
-			<h3>Did You Report Your Case to School Authorities? If not, why?</h3>
+				<script>
+					function reporting(tags) {
 
-			<div class="container">
-	    		<select class="yes-no"></select>
-	    	</div>
+						var list_choice = [
+							'Yes',
+							'No',
 
-			<script>
-	 			function reporting(tags) {
+						];
 
-	 				var list_choice = [
-                        'Yes',
-                        'No',
-           
-					];
-
-	 				if(tags == '')
-					//If the short_months('') paramenter is empty, add no tags
-					{
-						var i;
-						for (i = 0, l = list_choice.length, answers = ""; i < l; i++)
-							{
+						if (tags == '')
+						//If the short_months('') paramenter is empty, add no tags
+						{
+							var i;
+							for (i = 0, l = list_choice.length, answers = ""; i < l; i++) {
 								answers += list_choice[i];
 							}
 						}
-					else
-					//If the years('option') has paramenter, add the tags to it
-					{
-						for (i = 0, l = list_choice.length, answers = ""; i < l; i++)
+						else
+						//If the years('option') has paramenter, add the tags to it
 						{
-							answers+= "<" + tags +">" + list_choice[i] + "</" + tags +">";
-						}	
+							for (i = 0, l = list_choice.length, answers = ""; i < l; i++) {
+								answers += "<" + tags + ">" + list_choice[i] + "</" + tags + ">";
+							}
+						}
+
+						var multiple_list = document.getElementsByClassName("yes-no");
+						for (i = 0; i < multiple_list.length; i++) {
+							multiple_list[i].innerHTML = answers;
+						}
+
 					}
 
-					var multiple_list = document.getElementsByClassName("yes-no");
-				    for (i = 0; i < multiple_list.length; i++)
-					{
-				    	multiple_list[i].innerHTML = answers;
-				    }	
+					reporting('option');
+				</script>
 
-	 		}
-
-	 		reporting('option');
-	 		</script>
-
-	 		<input type="text" value="Please explain" id="textbox">
-		</div>
-		<input type="submit" value="Submit">
-
-	
-
-
-	 </div>
-
-	 <div class="sidebar-resources">
+				<input type="text" value="Please explain" id="textbox">
+			</div>
+			<input type="submit" value="Submit">
+	</form>
 
 
 
-	 </div>
+	</div>
+
+	<div class="sidebar-resources">
+
+
+
+	</div>
