@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<p>UVA Analytics</p>
+<?php
+    $servername = "localhost";
+    $username = "stellama_dbuser";
+    $password = "GHLVbny7";
+    $dbname = "stellama_reportDB";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+    } 
+    $query = mysql_query("Month * FROM uvaData"); 
+    $month = array();
+    while ($row = mysql_fetch_assoc($query)) {
+       $month.push($row);
+    }  
+    
+    $query2 = mysql_query("Year * FROM uvaData"); 
+    $year = array();
+    while ($row = mysql_fetch_assoc($query2)) {
+       $year.push($row);
+    } 
+
+    $query3 = mysql_query("Time * FROM uvaData"); 
+    $time = array();
+    while ($row = mysql_fetch_assoc($query3)) {
+       $time.push($row);
+    } 
+
+    $query4 = mysql_query("Type * FROM uvaData"); 
+    $type = array();
+    while ($row = mysql_fetch_assoc($query4)) {
+       $type.push($row);
+    } 
+
+    $query5 = mysql_query("Known * FROM uvaData"); 
+    $known = array();
+    while ($row = mysql_fetch_assoc($query5)) {
+       $known.push($row);
+    } 
+
+    function mean($ar){
+        for($i=0; $i<$count($ar); $i++)
+        {
+            $tot = ($tot+$ar[$i]);
+        }
+    return ($tot/$count($ar));
+    }
+
+    function median($ar){
+        if((count($ar)%2 == 0)
+        {
+            $temp=round((count($ar)/2)-1)*1000/1000;
+            for($i=0;$i<$(count($ar);$i++)
+            {
+                if($temp==$i || ($temp+1)==$i)
+                {
+                    $mid=$mid+$ar[$i];
+                }
+            }
+        $mid=$mid/2;
+        }
+        else 
+        {
+            $temp=floor(count($ar)/2);
+            for($i=1;$i<=count($ar);$i++)
+            {
+                if($temp==$i)
+                {
+                    $mid=$ar[$i];
+                }
+            }
+        }
+        return $mid;
+    }
+    function mode($ar){
+        $tally=array();
+        for($i=0;$i<count($ar);$i++)
+        {
+            for($j=0;$j<count($ar)-$i;$j++)
+            {
+                if($ar[$j]>$ar[$j+1])
+                {
+                    $tmp=$invalue[$j];
+                    $ar[$j]=$ar[$j+1];
+                    $ar[$j+1]=$tmp;
+                }
+            }
+        }
+        for($i=0;$i<=count($ar);$i++)
+        {
+        $tally[$i]=0;
+        }
+        for ($i = 0; $i<=count($ar); $i++) 
+        {
+            for($z=$i+1;$z<count($ar);$z++)
+            {
+                if($ar[$i]==$ar[$z])
+                {
+                    $tally[$i]=$tally[$i]+1;
+                }
+            }
+        }
+        $maxCount = 0;
+        $modeValue = 0;
+        for ($i = 0; $i < count($ar); $i++) 
+        {
+        if($tally[$i]>$maxCount)
+        {
+            $maxCount = $tally[$i];
+            $modeValue = $ar[$i];
+        }
+        }
+        return $modeValue;
+    }
+    //Mode & Median Month, Mean Year, Mode & Mean Time, Mode Type, percent Known
+    echo "Month Mode: " mode($month)
+    echo "Month Media: " median($month)
+    echo "Mean Year: " mean($year)
+    echo "Time Mode: " mode($time)
+    echo "Time Mean: " mean($time)
+    echo "Mode Type: " mode($type)
+    
+?>
+    <script>
+
+    </script>
+
+</html>
